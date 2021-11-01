@@ -4,6 +4,12 @@ namespace Sudoku.Lib.Validations
 {
     public static class Validate
     {
+        /// <summary>
+        /// Validates the board
+        /// </summary>
+        /// <param name="lines"></param>
+        /// <param name="globalValues"></param>
+        /// <returns></returns>
         public static char[,]? ValidateInput(this string[] lines, GlobalValues globalValues)
         {
 
@@ -32,6 +38,14 @@ namespace Sudoku.Lib.Validations
             return board;
         }
 
+        /// <summary>
+        /// Iterates the given coords for row, column and 3x3 cells 
+        /// </summary>
+        /// <param name="board"></param>
+        /// <param name="i"></param>
+        /// <param name="j"></param>
+        /// <param name="ch"></param>
+        /// <returns></returns>
         public static bool ValidateIteration(char[,] board, int i, int j, char ch)
         {
             for (int it = 0; it < 9; it++)
@@ -46,6 +60,11 @@ namespace Sudoku.Lib.Validations
             return true;
         }
 
+        /// <summary>
+        /// Validates the level of the board
+        /// </summary>
+        /// <param name="board">Board parameter</param>
+        /// <returns></returns>
         public static Level ValidateLevel(char[,] board)
         {
             int counter = 0;
