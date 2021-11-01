@@ -20,6 +20,7 @@ namespace Sudoku
                 }
                 else
                 {
+                    Console.WriteLine($"Difficulty Level: { Validate.ValidateLevel(board)}");
                     Execute.SudokuSolver(board,_globalValues);
                 }
                 Console.ReadKey();
